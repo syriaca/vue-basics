@@ -1,16 +1,9 @@
-const helloWorld = new Vue({
-    el: '#helloVue',
+const book = new Vue({
+    el: '#book',
     data: {
-        title: 'Hello World',
-        message: 'This is my first vue template !!!!'
-    }
-});
-
-const example = new Vue({
-    el: '#example',
-    data: {
-        title: 'Hello',
-        message: 'This is your daily cat information!',
-        name: 'Chewie'
+      title: 'The Sirens of Titan',
+      author: 'Kurt Vonnegut',
+      summary: 'This is a summary of the Sirens of Titan.',
+      showDetail: false
     }
 });
