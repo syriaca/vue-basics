@@ -37,7 +37,7 @@ const media = [
     {
       title: 'The Sirens of Titan', 
       description: "Mankind flung its advance agents ever outward, ever outward... it flung them like stones.",
-      type: 'book',
+      type: 'EPub',
       contributor: 'Kurt Vonnegut',
       showDetail: false,
     },
@@ -58,11 +58,22 @@ const app = new Vue({
       type: ''
     },
     methods: {
-        toggleDetails: function() {
+        toggleDetails: function(media) {
             media.showDetail = !media.showDetail
         },
         filterList: function() {
             this.type = event.target.value;
         }
+    },
+    computed: {
+      uniqueMediaList: function() {
+        const mediaTypes = [];
+        this.mediaList.forEach((media)=> {
+          if(!mediaTypes.includes(media.type)){
+            mediaTypes.push(media.type);
+          }
+        })
+        return mediaTypes;
+      }
     }
   });
